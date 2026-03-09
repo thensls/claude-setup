@@ -50,6 +50,19 @@ bash <(curl -s https://raw.githubusercontent.com/thensls/claude-setup/main/setup
 - `compound-engineering` — writing, planning, brainstorming tools
 - `skill-creator` — propose improvements to the skills
 
+### Marketing
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/thensls/claude-setup/main/setup-marketing.sh)
+```
+
+**Installs:**
+- Marketing Ops skills (as the team builds them out)
+- Google AI Mode — AI-synthesized web research with source citations from 100+ sites
+- `superpowers` — enhanced Claude capabilities
+- `compound-engineering` — writing, planning, brainstorming tools
+- `skill-creator` — propose improvements to the skills
+
 ---
 
 ## Updating your skills
@@ -65,6 +78,10 @@ git -C ~/nsls-skills/slt-ops pull
 
 # CS team
 git -C ~/nsls-skills/cs-ops pull
+git -C ~/nsls-skills/google-ai-mode pull
+
+# Marketing team
+git -C ~/nsls-skills/marketing-ops pull
 git -C ~/nsls-skills/google-ai-mode pull
 ```
 
@@ -87,6 +104,7 @@ Each skill set has its own GitHub repo with a guide for proposing changes:
 - **HR skills**: [github.com/thensls/people-ops-skills](https://github.com/thensls/people-ops-skills) — see `CONTRIBUTING.md`
 - **SLT skills**: [github.com/thensls/slt-ops-skills](https://github.com/thensls/slt-ops-skills) — see `CONTRIBUTING.md`
 - **CS skills**: [github.com/thensls/cs-ops-skills](https://github.com/thensls/cs-ops-skills) — see `CONTRIBUTING.md`
+- **Marketing skills**: [github.com/thensls/marketing-ops-skills](https://github.com/thensls/marketing-ops-skills) — see `CONTRIBUTING.md`
 
 The short version: click the pencil icon on any `SKILL.md` file in GitHub, make your edit, and submit it as a proposed change. Kevin reviews and approves.
 
