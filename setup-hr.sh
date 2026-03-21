@@ -56,6 +56,16 @@ else
   echo "✓ Skills downloaded"
 fi
 
+# ── 4b. Clone nsls-coach bot ──────────────────────────────────────────────
+if [ -d "$SKILLS_DIR/nsls-coach/.git" ]; then
+  echo "✓ NSLS Coach bot already installed — pulling latest updates"
+  git -C "$SKILLS_DIR/nsls-coach" pull --quiet
+else
+  echo "→ Downloading NSLS Coach bot code..."
+  gh repo clone thensls/nsls-coach "$SKILLS_DIR/nsls-coach" -- --quiet
+  echo "✓ Bot code downloaded"
+fi
+
 # ── 5. Create symlink so Claude discovers the skills ─────────────────────────
 ln -sfn "$SKILLS_DIR/people-ops" "$HOME/.claude/skills/people-ops"
 echo "✓ Skills connected to Claude"

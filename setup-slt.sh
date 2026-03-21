@@ -56,6 +56,16 @@ else
   echo "✓ Skills downloaded"
 fi
 
+# ── 4b. Clone slt-coach bot ───────────────────────────────────────────────
+if [ -d "$SKILLS_DIR/slt-coach/.git" ]; then
+  echo "✓ SLT Coach bot already installed — pulling latest updates"
+  git -C "$SKILLS_DIR/slt-coach" pull --quiet
+else
+  echo "→ Downloading SLT Coach bot code..."
+  gh repo clone thensls/slt-coach "$SKILLS_DIR/slt-coach" -- --quiet
+  echo "✓ Bot code downloaded"
+fi
+
 # ── 5. Create symlink so Claude discovers the skills ─────────────────────────
 ln -sfn "$SKILLS_DIR/slt-ops" "$HOME/.claude/skills/slt-operations"
 echo "✓ Skills connected to Claude"
