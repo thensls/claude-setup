@@ -28,6 +28,8 @@ bash <(curl -s https://raw.githubusercontent.com/thensls/claude-setup/main/setup
 
 ### Senior Leadership Team
 
+**New SLT member?** Start with the [SLT Onboarding Guide](onboarding-slt.md) — it covers the SLT Coach bot, goal updates, coaching, and Claude Code setup.
+
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/thensls/claude-setup/main/setup-slt.sh)
 ```
