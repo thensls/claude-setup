@@ -43,31 +43,22 @@ echo "✓ GitHub CLI authenticated as: $(gh api user -q .login)"
 mkdir -p "$HOME/.claude/skills"
 echo "✓ Skills directory ready"
 
-# ── 4. Clone slt-ops-skills ──────────────────────────────────────────────────
+# ── 4. Clone slt-coach (skills + bot code live in one repo) ────────────────
 SKILLS_DIR="$HOME/nsls-skills"
 mkdir -p "$SKILLS_DIR"
 
-if [ -d "$SKILLS_DIR/slt-ops/.git" ]; then
-  echo "✓ SLT Ops skills already installed — pulling latest updates"
-  git -C "$SKILLS_DIR/slt-ops" pull --quiet
-else
-  echo "→ Downloading NSLS SLT Ops skills..."
-  gh repo clone thensls/slt-ops-skills "$SKILLS_DIR/slt-ops" -- --quiet
-  echo "✓ Skills downloaded"
-fi
-
-# ── 4b. Clone slt-coach bot ───────────────────────────────────────────────
 if [ -d "$SKILLS_DIR/slt-coach/.git" ]; then
-  echo "✓ SLT Coach bot already installed — pulling latest updates"
+  echo "✓ SLT Coach already installed — pulling latest updates"
   git -C "$SKILLS_DIR/slt-coach" pull --quiet
 else
-  echo "→ Downloading SLT Coach bot code..."
+  echo "→ Downloading SLT Coach (skills + bot)..."
   gh repo clone thensls/slt-coach "$SKILLS_DIR/slt-coach" -- --quiet
-  echo "✓ Bot code downloaded"
+  echo "✓ Downloaded"
 fi
 
 # ── 5. Create symlink so Claude discovers the skills ─────────────────────────
-ln -sfn "$SKILLS_DIR/slt-ops" "$HOME/.claude/skills/slt-operations"
+# Skills live in slt-coach/skills/ (not the archived slt-ops-skills repo)
+ln -sfn "$SKILLS_DIR/slt-coach/skills" "$HOME/.claude/skills/slt-operations"
 echo "✓ Skills connected to Claude"
 
 # ── 6. Add Every marketplace ─────────────────────────────────────────────────

@@ -88,7 +88,7 @@ Skills improve over time. To pull the latest:
 git -C ~/nsls-skills/people-ops pull
 
 # SLT team
-git -C ~/nsls-skills/slt-ops pull
+git -C ~/nsls-skills/slt-coach pull
 
 # CS team
 git -C ~/nsls-skills/cs-ops pull
